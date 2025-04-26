@@ -1,0 +1,60 @@
+zadania z gakko sa rozszerzone
+
+1 test za 3 tygodni, poczatek czerwca
+kolejny zjazd pokazanie zadan na kolokiuwm
+
+programowanie w C
+
+6 zajecia 1 kol -> kartki, 45 min, 3 zadania, 1 na 15 min, 60 punktow
+7 zajecia 2 kol (algorytmy na wykladzie) -> gakko + kartka moze sie przydac i excel
+8 zajecia poprawa kol
+
+if
+for
+while
+
+mv - przemieszczanie plikow miedzy katalogami, lub zmiany nazw, zalezne od drugiego parametru 
+
+mv file1.txt renamed.txt
+mv file1.txt ./katalog
+
+rm - usuwanie plikow i katalogow
+rm - usuwanie nieodwracalne, usuwajac katalog z zawartoscia usuwa sie caly wezel
+
+rm -d usuwa puste katalogi
+rmdir usuwa katalogi
+
+rm -r rekurencyjne usuwanie 
+
+rm -f force nie patrz na komunikaty po prostu usun
+
+pliki to liscie w drzewie katalogi to wezly, nie ma polaczen od plikow w dol
+
+grep - podstawowa do przeszukiwania lini pliku na podstawie patternu <- naj, poprzedza z nazwa pliku skad pochodzi
+egrep z opcja e <- naj. szuka linie nie slowa
+fgrep z opcka f
+rgrep z opcja r
+
+
+"^a.{6}" - . to 6 dowolnych znakow tutaj
+"^a{6}" - zaczyna sie od 6 a
+
+* wszystkie pliki i katalogi
+*.txt wszystkie plikki z rozszerzeniem txt
+
+grep "^a" * tutaj beda nazwy plikow
+
+[ ] 
+-n sprawdza czy string podany jest dlugosci zero jesli nie ma wartosci 0
+
+\ uzywa sie jak chce sie dac jakies specjalne znaczneie znak ucieczki
+
+\> tuatj bez tego\ probowal by to zapisac jak strumien ale chcemy znak specjalny wiec uzywamy znaku ucieszko
+
+-gt -ls ale to jest do liczb calkowithch tylko
+
+-nt newer then
+
+for file in *.txt lub * ; 
+
+zadanie 6 moze byc na tescie

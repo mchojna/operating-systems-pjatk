@@ -1,0 +1,124 @@
+cat -n <- zawartosc i linie
+file <- rodzaj zawartosci
+cut <- wycinanie sekcji z kazdej linii z plikow (conajmniej 1 opcja)
+	-b bit
+	-c znak niemy
+cut -c 1 <- pierwszyz znak z kazdej linii
+find <- szukanie po roznych parametrach, np po nazwie
+. od ktorego wezla zaczynamy poddrzewa -> sciezka
+~ od roota do wszystkich miejsc
+uniq <- wyswietla linie bez duplikatow ale miedzy liniami porownuje z 1 wyzej i 1 nizej
+	na ASCII wiec biale znaki tez beda interpretowane
+	-c zlicza ile razy wystapila dana linia
+
+komenda 1 wejscie i 2 wyjscia
+	1st wyjscie dla rezultatu
+	2nd wyjscie dla wiadomosci bledu -> chcemy przekierowac te bledy (/dev/null -> miejsce na smieci, czyszczone przez system przez pewien frametiem)
+
+przekierowanie miedzy komentami
+potop
+znak potoku
+rezultat komenty jest podawany na wejscie drugiej komendy
+cmd | komenta
+np. head -7 file.txt | tail -4 | sort | wc -m
+
+strumienie 
+1> to to samo co >
+2> drugie wyjscie
+
+cmd > file
+wezmie i nadpisze zawartosc pliku
+cmd >> file
+wezmie i dopisze zawartosc pliku
+
+jak sie przekieruje wyjscie do pliku ktorego nie ma to utworzy sie ten plik
+
+cmd < plik
+przekazanie zawartosci pliku jako wejscie do komendy
+
+wc -m < file.tx 
+komenda bazuje wartosc na nazwie pliku co sie poda
+
+cmd 2> file
+drugie wyjscie dla wiadomoscie bledu
+cmd 2>> file
+to samo ale dopsanie
+
+strumienie mozna wykonywac wraz z potokami
+
+head -3 < file3.txt > file3.txt
+takie nadpisanie nie zadziala poniewaz na wyjscie jest z automatu czyszczone wyjscie
+
+echo przekazuje na standardowe wyjscie wszystkie parametry
+
+$() subshell
+mozna przypisywac wartosc do zmiennej
+podwatek wykonywania komendy
+zanim komenda sie wykona trzeba wiedziec jaka jest zawartosc w srodku
+
+bez "" echo wyswietli wszystko w jednej lini
+w "" znaki nowej lini beda chonorowane przez echo
+
+mozna przekierowywac 2 wyjscia w jednej komendzie
+
+
+skrypty bashowe
+rozszerzenie .sh
+mozna uzywac tych samych komend co command linie
+
+#!/bin/bash <-trzeba dodac specjalny komentarz na poczatku, w systemach sa zmienne systemowe np do interpretatora bash, ale nie wie sie czy ta zmienna systemowa jest ustawiona, jesli nie jest ustawiona to skryp bedzie szukac interpretatora pod wskazana sciezka (1 punkt za to na kolokwium)
+
+tablica parametrow / argumentow na wejscie od 0 do nieskonczonosci
+0 jest szczegolny, argument z nazwa skryptu i sciezka
+
+znak dolara przez 0 wskazuje na wartosc zmiennej uzywa sie jak chce sie pobrac
+
+\> znak ucieczki 
+mamy tablice na argumenty 0 1 2 3
+po nazwie skrtyptu jest znak spacji do podania kolejnych parametrow
+jak chce sie dac jeden string to w ' ' 
+z ./ dziala tak samo jak komenda bash 
+
+pusta linia przed ktora zostal wykonany shift 
+shift to zmiana indeksu na mieszy wszystkiego a 0 bedzie niezmieniony poniewaz jest to specjalne
+wiec shift to przesuniecie w tabli
+
+mozna sie odnosic do $1 i shift i wtedy mimo ze do tej samej nazwy zmiennej to wtedy bedzie inna wartosc
+
+do shift 2 mozna dodac parametr wiec operacja bedzie wykonana co 2 
+
+echo samo w sobie dodaje pusta linie
+
+$# aktualna liczba wystepujacych w tablicy parametrow
+$@ zwraca cala zawartosc aktualnej tablicy
+
+let pozwala na operacje artymetyczne
+w let jesli nie ma "" nie mozna uzywac spacji
+
+bez let kolejne znaki jako pojedyncze znaki i sa konkatynowane
+
+
+$(()) mozemy w nich wykonac operacje arytmetyczne
+
+bez "" echo wyswietla wszystko w jednej linii
+
+if [] <- kwadratowe nawiasy to tez komendy wiec nie moga byc przytulone do innych znakow (komenda testowa)
+then
+	...
+fi <- zawsze jedno i zawsze na koncu warunku
+
+-gt greater then
+-ge greater or equal
+-lt  
+-le
+-eq
+-nq
+
+then przy if i else if
+ale nie przy else
+
+man [ ]
+
+echo uzywa tylko parametrow uzywanych po nazwie
+
+echo "(<file.txt)"

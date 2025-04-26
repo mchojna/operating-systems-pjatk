@@ -1,0 +1,6 @@
+head: cannot open ‘/home:’ for reading: No such file or directory
+head: cannot open ‘aquota.group’ for reading: No such file or directory
+head: cannot open ‘aquota.user’ for reading: No such file or directory
+head: cannot open ‘lost+found’ for reading: No such file or directory
+head: cannot open ‘oper’ for reading: No such file or directory
+head: cannot open ‘PJWSTK’ for reading: No such file or directory
